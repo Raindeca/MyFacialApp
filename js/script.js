@@ -2,6 +2,7 @@ function openCvReady() {
   var model = undefined;
   const cameraSection = document.getElementById('cameraSection');
   const enableWebcamButton = document.getElementById('enableWebcam');
+  const downloadButton = document.getElementById("downloadButton");
 
   // Load the tfjs model.
   async function loadModel() {
@@ -20,13 +21,26 @@ function openCvReady() {
 
 
   cv['onRuntimeInitialized'] = () => {
+
+    // Using function to download result later
+    function download() {
+      var download = document.getElementById("download");
+      var image = document.getElementById("canvas_output").toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+      download.setAttribute("href", image);
+    }
+
+    downloadButton.addEventListener('click', download);
+
+
     let video = document.getElementById('cam_input');
-    
+
     // using WebRTC to get media stream
     function getUserMediaSupported() {
       return !!(navigator.mediaDevices &&
         navigator.mediaDevices.getUserMedia);
     }
+
     if (getUserMediaSupported()) {
       enableWebcamButton.addEventListener('click', enableCam);
     } else {
@@ -94,6 +108,7 @@ function openCvReady() {
         }
 
         cv.imshow('canvas_output', src);
+
       }
 
       setInterval(async () => {
@@ -136,6 +151,7 @@ function openCvReady() {
 
       return maxIndex
     }
+
 
 
   }
