@@ -151,6 +151,11 @@ html, body {
     width: 480px;
 } */
 
+.camera {
+    height: 360px;
+    width: 480px;
+}
+
 .page-break {
     padding-top: 8rem;
 }
@@ -299,6 +304,10 @@ article {
     .btn-outline-warning:hover {
         background-color: #F0F0F0 !important;
         border: 2px solid #EB8E5A !important;
+    }
+
+    .camera {
+        width: auto;
     }
 } 
 
