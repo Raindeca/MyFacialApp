@@ -151,10 +151,6 @@ html, body {
     width: 480px;
 } */
 
-.camera {
-    height: 360px;
-    width: 480px;
-}
 
 .page-break {
     padding-top: 8rem;
@@ -212,7 +208,7 @@ article {
 
 
 /* < --- Media Screen -- > */
-@media screen and (max-width: 1200px) {
+@media (max-width: 1199.98px) {
     .image {
         padding-top: 0;
         width: 100%;
@@ -236,10 +232,14 @@ article {
         text-align: center;
     }
 
+    /* #canvas_output {
+        width: 100% !important;
+    } */
+
     
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 991.98px) {
     article {
         font-family: Montserrat;
         font-style: normal;
@@ -306,12 +306,9 @@ article {
         border: 2px solid #EB8E5A !important;
     }
 
-    .camera {
-        width: auto;
-    }
 } 
 
-@media screen and (max-width: 768px) {
+@media (max-width: 767.98px) {
     article {
         font-family: Montserrat;
         font-style: normal;
@@ -379,7 +376,7 @@ article {
     }
 }
 
-@media screen and (max-width: 568px) {
+@media (max-width: 575.98px) {
     .c--header-text {
         font-family: Montserrat-bold;
         font-style: normal;
